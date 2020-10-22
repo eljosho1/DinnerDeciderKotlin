@@ -26,6 +26,18 @@ class MainActivity : AppCompatActivity() {
             addFoodText.text.clear()
             println(foodList)
         }
+
+        buttonReset.setOnClickListener {
+            var random = Random()
+            val randomFood = random.nextInt(foodList.count())
+            selectedFoodText.text = foodList[randomFood]
+        }
+    }
+
+    fun clickReset(view: View){
+        foodList.clear()
+        foodList.add("food1")
+        foodList.add("food2")
     }
 
 }
